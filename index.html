@@ -12,15 +12,79 @@
             <section>
                 <h2>Burger Menu</h2>
                 <p>Choose the burger you want!</p>
+                <div style="display: inline-block">
+                    <h1>Crispy Spicy Chicken Burger</h1>
+                    <img src = "/img/burger1.jpg" alt="Crispy Spicy Chicken Burger" style="width: 400px; height: 300px;">
+                    <ul>
+                        <li>Price: $25</li>
+                        <li>Contain Peanut</li>
+                        <li>Contain Milk</li>
+                    </ul>
+                </div>
+                <div style="display: inline-block">
+                    <h1>Grilled Chicken Burger</h1>
+                    <img src = "/img/burger2.png" alt="Grilled Chicken Burger" style="width: 400px; height: 300px;">
+                    <ul>
+                        <li>Price: $20</li>
+                        <li>Contain Milk</li>
+                        <li>Contain coconut</li>
+                    </ul>
+                </div>
+                <div style="display: inline-block">
+                    <h1>Cheese Fish Burger</h1>
+                    <img src = "/img/burger3.jpeg" alt="Cheese Fish Burger" style="width: 400px; height: 300px;">
+                    <ul>
+                        <li>Price: $28</li>
+                        <li>Contain almond</li>
+                        <li>Contain Peanut</li>
+                    </ul>
+                </div>
             </section>
             <section>
                 <h3>Customer Information</h3>
                 <p>Please fill in information</p>
+                <h4>Delivery Information</h4>
+                <p>
+                    <label for="fullname">Full name</label>
+                    <input type="text" id="fullname" required="required" name="fn" placeholder="First- and Last name">
+                </p>
+                <p>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required="required" name="em" placeholder="E-mail address">
+                </p>
+                <p>
+                    <label for="street">Street</label>
+                    <input type="text" id="street" required="required" name="st" placeholder="Street name">
+                </p>
+                <p>
+                    <label for="house">House</label>
+                    <input type="number" id="house" required="required" name="hs" placeholder="House number">
+                </p>
+                <p>
+                    <label for="payment">Payment options</label>
+                    <select id = "payment" name = "crp">
+                        <option selected="selected">Swish</option>
+                        <option>visa</option>
+                        <option>mastercard</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="gender-male">Gender:</label>
+                    <input type="radio" id="gender-male" name="gd" value="male">
+                    <label for="gender-male">Male</label>
+                    <input type="radio" id="gender-female" name="gd" value="female">
+                    <label for="gender-female">Female</label>
+                    <input type="radio" id="do not wish to provide" name="gd" value="do not with to provide" checked="checked">
+                    <label for="do not wish to provide">Do not wish to provide</label>
+                </p>
             </section>
         </main>
+        <button type="submit">
+          <img src="/img/images.png" style="width: 60px; height: 30px;">
+        </button>
         <hr>
         <footer>
-            End notes
+            @Burger Inc.
         </footer>
    </body>
    <body>
