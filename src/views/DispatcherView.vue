@@ -1,27 +1,41 @@
 <template>
-    <div id="orders">
-      <div id="orderList">
-        <div v-for="(order, key) in orders" v-bind:key="'order'+key">
-          #{{ key }}: {{ order.orderItems.join(", ") }}
-        </div>
-        <button v-on:click="clearQueue">Clear Queue</button>
+  <div id="orders">
+    <div id="orderList">
+      <div v-for="(order, key) in orders" :key="key">
+        <p>
+          #{{ order.orderId }}:
+          {{ Object.keys(order.orderedBurgers).map(burgerName => burgerName).join(', ') }}
+        </p>
+        <p>
+          <span style="font-style: Times New Roman">
+            {{ order.fullName }} ({{ order.email }}, {{ order.paymentOption }}, {{ order.gender }})
+          </span>
+        </p>
+        <hr>
       </div>
-      <div id="dots">
-          <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}" v-bind:key="'dots' + key">
-            {{ key }}
-          </div>
+      <button v-on:click="clearQueue">Clear Queue</button>
+    </div>
+
+    <div id="dots">
+      <div v-for="(order, key) in orders" :key="key" :style="{ left: order.location.x + 'px', top: order.location.y + 'px'}">
+        {{ order.orderId }}
       </div>
     </div>
-  </template>
+  </div>
+</template>
+
+
   <script>
   import io from 'socket.io-client'
   const socket = io("localhost:3000");
-  
+
   export default {
     name: 'DispatcherView',
     data: function () {
       return {
-        orders: null,
+        orders: [],
+        location:{ x:0, y:0},
+        target: 0
       }
     },
     created: function () {
@@ -59,7 +73,7 @@
     cursor: crosshair;
     background-image: url('/img/polacks.jpg');
   }
-  
+
   #dots div {
     position: absolute;
     background: black;
@@ -70,4 +84,3 @@
     text-align: center;
   }
   </style>
-  
